@@ -53,7 +53,7 @@ const LeadershipTeamComponent = ({ isVisible }: { isVisible: boolean }) => (
           <div className="mb-6">
             <div className="relative w-40 h-40 md:w-64 md:h-64 mx-auto rounded-lg overflow-hidden gradient-card border border-primary/10 shadow-md hover:shadow-lg transition-all duration-300">
               <Image
-                src={member.image || '/placeholder.svg'}
+                src={member.image || '/images/logo.png'}
                 alt={member.name}
                 fill
                 className="object-cover"

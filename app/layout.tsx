@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: 'Empowering healthcare professionals and institutions with training, certification, and digital transformation solutions.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'CHS - Chatushtya Health Services LLP',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'CHS - Healthcare Capacity Building',
     description: 'Unlock your full potential with Chatushtya Health Services',
-    images: ['/og-image.jpg'],
+    images: ['/logo.png'],
   },
   icons: {
     icon: [
@@ -45,9 +45,8 @@ export const metadata: Metadata = {
         sizes: 'any',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/logo.png',
   },
-    generator: 'v0.app'
 }
 
 export const viewport: Viewport = {

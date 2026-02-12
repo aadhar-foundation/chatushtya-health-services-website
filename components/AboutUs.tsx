@@ -77,7 +77,7 @@ export default function AboutUs() {
                 {/* Image Container */}
                 <div className="relative h-72 md:h-80 overflow-hidden">
                   <Image
-                    src={member.image || '/images/placeholder.jpg'}
+                    src={member.image || "/placeholder.svg"}
                     alt={member.name}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-300"
