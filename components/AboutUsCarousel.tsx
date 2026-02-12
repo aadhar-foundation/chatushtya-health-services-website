@@ -44,15 +44,14 @@ const LeadershipTeamComponent = ({ isVisible }: { isVisible: boolean }) => (
       {LEADERSHIP_TEAM.map((member, index) => (
         <div
           key={index}
-          className={`text-center transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
+          className={`text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
           style={{
             transitionDelay: isVisible ? `${index * 100}ms` : '0ms',
           }}
         >
           <div className="mb-6">
-            <div className="relative w-40 h-40 md:w-64 md:h-64 mx-auto rounded-lg overflow-hidden gradient-card border border-primary/10 dark:border-primary/20 shadow-md hover:shadow-lg transition-all duration-300">
+            <div className="relative w-40 h-40 md:w-64 md:h-64 mx-auto rounded-lg overflow-hidden gradient-card border border-primary/10 shadow-md hover:shadow-lg transition-all duration-300">
               <Image
                 src={member.image || '/placeholder.svg'}
                 alt={member.name}
@@ -61,11 +60,11 @@ const LeadershipTeamComponent = ({ isVisible }: { isVisible: boolean }) => (
               />
             </div>
           </div>
-          <h4 className="text-lg md:text-xl font-bold text-primary dark:text-white mb-2">
+          <h4 className="text-lg md:text-xl font-bold text-primary mb-2">
             {member.name}
           </h4>
           <p className="text-secondary font-semibold mb-3">{member.role}</p>
-          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+          <p className="text-sm text-slate-600 leading-relaxed">
             {member.description}
           </p>
         </div>
@@ -81,19 +80,15 @@ const WhatWeDoComponent = ({ isVisible }: { isVisible: boolean }) => (
         const Icon = iconMap[item.icon as string];
         return (
           <div
-            key={item.id}
-            className={`p-6 rounded-lg gradient-card hover:gradient-card-hover border border-primary/10 dark:border-primary/20 transition-all duration-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{
-              transitionDelay: isVisible ? `${index * 100}ms` : '0ms',
-            }}
+            key={index}
+            className={`p-6 rounded-lg gradient-card hover:gradient-card-hover border border-primary/10 transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms', }}
           >
             {Icon && <Icon size={36} className="text-primary mb-4" />}
-            <h4 className="text-lg font-bold text-primary dark:text-white mb-2">
+            <h4 className="text-lg font-bold text-primary mb-2">
               {item.title}
             </h4>
-            <p className="text-sm text-slate-600 dark:text-slate-400">
+            <p className="text-sm text-slate-600">
               {item.description}
             </p>
           </div>
@@ -105,24 +100,23 @@ const WhatWeDoComponent = ({ isVisible }: { isVisible: boolean }) => (
 
 const WhyChooseUsComponent = ({ isVisible }: { isVisible: boolean }) => (
   <div className={`transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-    <div className="grid grid-cols-3 md:grid-cols-4 gap-6">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
       {WHY_CHOOSE_US.map((item, index) => {
         const Icon = iconMap[item.icon as string];
         return (
           <div
-            key={item.id}
-            className={`p-6 rounded-lg gradient-card hover:gradient-card-hover border border-primary/10 dark:border-primary/20 transition-all duration-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            key={index}
+            className={`p-6 rounded-lg gradient-card hover:gradient-card-hover border border-primary/10 transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             style={{
               transitionDelay: isVisible ? `${index * 100}ms` : '0ms',
             }}
           >
             {Icon && <Icon size={36} className="text-primary mb-4" />}
-            <h4 className="text-lg font-bold text-primary dark:text-white mb-2">
+            <h4 className="text-lg font-bold text-primary mb-2">
               {item.title}
             </h4>
-            <p className="text-sm text-slate-600 dark:text-slate-400">
+            <p className="text-sm text-slate-600">
               {item.description}
             </p>
           </div>
@@ -138,17 +132,16 @@ const CoreValuesComponent = ({ isVisible }: { isVisible: boolean }) => (
       {CORE_VALUES.map((value, index) => (
         <div
           key={index}
-          className={`p-6 rounded-lg gradient-card hover:gradient-card-hover border border-primary/10 dark:border-primary/20 transition-all duration-300 text-center ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
+          className={`p-6 rounded-lg gradient-card hover:gradient-card-hover border border-primary/10 transition-all duration-300 text-center ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
           style={{
             transitionDelay: isVisible ? `${index * 100}ms` : '0ms',
           }}
         >
-          <h4 className="text-lg font-bold text-primary dark:text-white mb-2">
+          <h4 className="text-lg font-bold text-primary mb-2">
             {value.title}
           </h4>
-          <p className="text-sm text-slate-600 dark:text-slate-400">
+          <p className="text-sm text-slate-600">
             {value.description}
           </p>
         </div>
@@ -228,19 +221,18 @@ export default function AboutUsCarousel() {
     <section
       id="about"
       ref={ref}
-      className="w-full py-16 md:py-24 lg:py-32 bg-white dark:bg-background relative"
+      className="w-full py-16 md:py-24 lg:py-32 bg-white relative"
     >
       {/* Decorative accent line */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-[#A7833F]/30 dark:bg-[#A7833F]/20" />
-      
-      <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
+      <div className="absolute top-0 left-0 right-0 h-1 bg-[#A7833F]/30" />
+
+      <div className="max-w-[90%] mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div
-          className={`text-center mb-16 md:mb-20 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
+          className={`text-center mb-16 md:mb-20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#193358] dark:text-white mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#193358] mb-4">
             About Us
           </h2>
           <div className="w-20 h-1 bg-[#A7833F] mx-auto rounded-full" />
@@ -248,15 +240,14 @@ export default function AboutUsCarousel() {
 
         {/* Company Description */}
         <div
-          className={`max-w-4xl mx-auto mb-16 md:mb-24 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
+          className={`mx-auto mb-16 md:mb-24 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
         >
-          <div className="space-y-6 bg-[#193358]/5 dark:bg-[#A7833F]/10 p-8 md:p-12 rounded-xl border border-[#193358]/10 dark:border-[#A7833F]/20 shadow-sm">
+          <div className="space-y-6 bg-[#193358]/5 p-8 md:p-12 rounded-xl border border-[#193358]/10 shadow-sm">
             {ABOUT_DESCRIPTION.split('\n\n').map((paragraph, index) => (
               <p
                 key={index}
-                className="text-base md:text-lg text-slate-700 dark:text-slate-300 leading-relaxed"
+                className="text-base md:text-lg text-slate-700 leading-relaxed"
               >
                 {paragraph}
               </p>
@@ -267,37 +258,35 @@ export default function AboutUsCarousel() {
         {/* Component Heading with Arrow Navigation */}
         <div className="mb-16 md:mb-20">
           <div className="flex items-center justify-center gap-6 flex-wrap">
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#193358] dark:text-white">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#193358]">
               {currentLabel}
             </h3>
             <button
               onClick={handleNextComponent}
               disabled={isLoading}
-              className="p-3 md:p-4 lg:p-5 bg-[#A7833F] hover:bg-[#193358] text-white rounded-full transition-all duration-300 hover:scale-125 active:scale-110 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+              className="hover:bg-[#A7833F] bg-[#193358] text-white p-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
               aria-label="Next component"
               title="Click to view next component"
             >
-              <ChevronRight size={28} className={`md:w-8 md:h-8 lg:w-10 lg:h-10 ${isLoading ? 'animate-spin' : ''}`} />
+              <ChevronRight size={20} className={`md:w-8 md:h-8 lg:w-10 lg:h-10 ${isLoading ? 'hidden' : ''}`} />
             </button>
           </div>
         </div>
 
         {/* Loading Overlay */}
         {isLoading && (
-          <div className="fixed inset-0 bg-black/50 dark:bg-black/70 flex items-center justify-center z-50 rounded-lg">
-            <div className="bg-white dark:bg-slate-800 p-8 md:p-12 rounded-2xl shadow-2xl text-center">
-              <div className="mb-4">
-                <div className="inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 bg-[#193358]/10 dark:bg-[#A7833F]/10 rounded-full">
-                  <Image
-                    src="/images/chs-logo.jpg"
-                    alt="CHS Logo"
-                    width={60}
-                    height={60}
-                    className="animate-pulse"
-                  />
-                </div>
+          <div className="fixed inset-0 bg-black/50 w-full h-full flex flex-col items-center justify-center z-50 py-10 rounded-2xl text-center mb-4">
+            <div className="flex flex-col items-center justify-center rounded-xl bg-white/90 py-8">
+              <div className="flex items-center justify-center rounded-full">
+                <Image
+                  src="/images/logo.png"
+                  alt="CHS Logo"
+                  width={300}
+                  height={300}
+                  className="flex relative object-contain animate-pulse"
+                />
               </div>
-              <p className="text-slate-700 dark:text-slate-300 font-semibold">Loading...</p>
+              <div className="text-primary font-semibold text-base lg:text-xl italic">Loading...</div>
             </div>
           </div>
         )}

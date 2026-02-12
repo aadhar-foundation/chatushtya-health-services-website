@@ -61,31 +61,34 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 w-full transition-all duration-500 ${
-        scrolled
-          ? 'bg-white/95 dark:bg-slate-900/95 shadow-md text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700'
-          : 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800'
-      }`}
+      className={`sticky top-0 z-50 w-full transition-all duration-500 ${scrolled
+        ? 'bg-white/95 shadow-md text-slate-900 border-b border-slate-200'
+        : 'bg-white text-slate-900 border-b border-slate-100'
+        }`}
     >
-      <div className="max-w-7xl mx-auto px-3 md:px-4 lg:px-6">
+      <div className=" mx-auto px-3 md:px-4 lg:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo - Extreme Left */}
-          <Link 
-            href="#home" 
-            className="flex items-center gap-3 flex-shrink-0 group"
+          <Link
+            href="#home"
+            className="flex items-center justify-center h-32"
           >
-            <div className="relative h-10 w-10 md:h-12 md:w-12 rounded-lg overflow-hidden bg-[#193358] p-1 group-hover:shadow-lg transition-all duration-300">
+            <div className="relative h-24 w-16 p-0 overflow-hidden">
               <Image
-                src="/images/chs-logo.jpg"
+                src="/images/logo.png"
                 alt="CHS Logo"
-                fill
-                className="object-contain"
+                width={20}
+                height={20}
+                className="w-full h-full object-cover"
                 priority
               />
             </div>
-            <div className="hidden xs:flex flex-col gap-0">
-              <span className="font-bold text-sm md:text-base lg:text-lg text-[#193358] dark:text-[#A7833F]">CHS</span>
-              <span className="text-xs md:text-sm text-slate-600 dark:text-slate-400 font-medium leading-none">Health Services</span>
+            <div className="flex flex-col gap-0">
+              <div className="font-bold text-lg md:text-xl lg:text-2xl text-primary">CHATUSTHYA</div>
+              <div className="font-medium text-sm md:text-base lg:text-lg mr-2 text-primary leading-none">
+                HEALTH SERVICES
+                <span className="font-medium text-sm md:text-base lg:text-lg ml-2 leading-none">LLP</span>
+              </div>
             </div>
           </Link>
 
@@ -93,16 +96,15 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-1 lg:gap-2 flex-1 justify-center">
             {NAV_LINKS.map((link) => {
               const isAboutLink = link.label === 'About Us';
-              
+
               return isAboutLink ? (
                 <div key={link.label} className="relative group">
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className={`px-3 lg:px-4 py-2 text-xs lg:text-sm font-semibold transition-all duration-300 rounded-lg relative overflow-hidden flex items-center gap-1.5 ${
-                      activeSection === link.href.replace('#', '')
-                        ? 'text-[#193358] dark:text-[#c9a96e] bg-[#193358]/5 dark:bg-[#A7833F]/10'
-                        : 'text-slate-700 dark:text-slate-300 hover:text-[#193358] dark:hover:text-[#c9a96e]'
-                    }`}
+                    className={`px-3 lg:px-4 py-2 text-xs lg:text-sm font-semibold transition-all duration-300 rounded-lg relative overflow-hidden flex items-center gap-1.5 ${activeSection === link.href.replace('#', '')
+                      ? 'text-[#193358] bg-[#193358]/5'
+                      : 'text-slate-700 hover:text-[#193358]'
+                      }`}
                   >
                     <span>{link.label}</span>
                     <ChevronDown size={14} className="transition-transform group-hover:rotate-180 duration-300" />
@@ -110,13 +112,13 @@ export default function Navbar() {
                   </button>
 
                   {/* Dropdown Menu */}
-                  <div className="absolute left-0 mt-0 w-48 bg-white dark:bg-slate-800 border border-[#193358]/10 dark:border-[#A7833F]/20 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 z-50">
+                  <div className="absolute left-0 mt-0 w-48 bg-white border border-[#193358]/10 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 z-50">
                     {NAV_LINKS_DROPDOWN.map((subLink) => (
                       <Link
                         key={subLink.label}
                         href={subLink.href}
                         onClick={() => scrollToSection(subLink.href)}
-                        className="block px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-[#193358]/5 dark:hover:bg-[#A7833F]/10 hover:text-[#193358] dark:hover:text-[#c9a96e] transition-all duration-300"
+                        className="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#193358]/5 hover:text-[#193358] transition-all duration-300"
                       >
                         {subLink.label}
                       </Link>
@@ -133,11 +135,10 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => scrollToSection(link.href)}
-                  className={`group px-3 lg:px-4 py-2 text-xs lg:text-sm font-semibold transition-all duration-300 rounded-lg relative overflow-hidden flex items-center gap-1.5 ${
-                    activeSection === link.href.replace('#', '')
-                      ? 'text-[#193358] dark:text-[#c9a96e] bg-[#193358]/5 dark:bg-[#A7833F]/10'
-                      : 'text-slate-700 dark:text-slate-300 hover:text-[#193358] dark:hover:text-[#c9a96e]'
-                  }`}
+                  className={`group px-3 lg:px-4 py-2 text-xs lg:text-sm font-semibold transition-all duration-300 rounded-lg relative overflow-hidden flex items-center gap-1.5 ${activeSection === link.href.replace('#', '')
+                    ? 'text-[#193358] bg-[#193358]/5'
+                    : 'text-slate-700 hover:text-[#193358]'
+                    }`}
                 >
                   {link.label === 'Home' && <Home size={16} />}
                   <span className="relative z-10">{link.label === 'Home' ? '' : link.label}</span>
@@ -146,7 +147,7 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Contact Button - Extreme Right */} 
+          {/* Contact Button - Extreme Right */}
           <div className="flex items-center gap-3">
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -159,7 +160,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2.5 text-[#193358] dark:text-[#A7833F] hover:bg-[#193358]/5 dark:hover:bg-[#A7833F]/10 rounded-lg transition-all duration-300 active:scale-95"
+            className="md:hidden p-2.5 text-[#193358] hover:bg-[#193358]/5 rounded-lg transition-all duration-300 active:scale-95"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -169,7 +170,7 @@ export default function Navbar() {
 
         {/* Mobile Menu - Modern Slide Animation */}
         {isOpen && (
-          <div className="md:hidden pb-4 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 animate-slide-up">
+          <div className="md:hidden pb-4 bg-white border-t border-slate-200 animate-slide-up">
             <div className="py-3 space-y-2 px-4">
               {NAV_LINKS.map((link) => (
                 <Link
@@ -179,7 +180,7 @@ export default function Navbar() {
                     scrollToSection(link.href);
                     setIsOpen(false);
                   }}
-                  className="group flex items-center gap-2 px-4 py-3 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-[#193358] dark:hover:text-[#c9a96e] hover:bg-[#193358]/5 dark:hover:bg-[#A7833F]/10 rounded-lg transition-all duration-300"
+                  className="group flex items-center gap-2 px-4 py-3 text-sm font-semibold text-slate-700 hover:text-[#193358] hover:bg-[#193358]/5 rounded-lg transition-all duration-300"
                 >
                   {link.label === 'Home' && <Home size={18} />}
                   <span>{link.label === 'Home' ? '' : link.label}</span>

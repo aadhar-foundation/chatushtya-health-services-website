@@ -73,67 +73,7 @@
 }
 
 .dark {
-  --color-primary: #2a4a7c;
-  --color-primary-light: #3d5fa0;
-  --color-primary-dark: #0f1f35;
-  
-  --color-secondary: #c9a96e;
-  --color-secondary-light: #dcc4a0;
-  --color-secondary-dark: #6d5428;
-  
-  --color-accent: #c9a96e;
-  --color-accent-light: #dcc4a0;
-  --color-accent-dark: #6d5428;
-  
-  --color-tertiary: #94A3B8;
-  --color-tertiary-light: #CBD5E1;
-  --color-tertiary-dark: #64748B;
-  
-  --color-dark: #030712;
-  --color-light: #1E293B;
-  --color-lighter: #334155;
-  --color-white: #F1F5F9;
-  --color-gray: #94A3B8;
-  --color-gray-light: #CBD5E1;
-  --color-gray-dark: #64748B;
-  
-  --color-success: #34D399;
-  --color-error: #F87171;
-  --color-warning: #FFB703;
-  --color-info: #0D8AA6;
-  
-  --background: 215 28% 12%;
-  --foreground: 210 40% 96%;
-  --card: 215 28% 17%;
-  --card-foreground: 210 40% 96%;
-  --popover: 215 28% 17%;
-  --popover-foreground: 210 40% 96%;
-  --primary: 199 100% 30%;
-  --primary-foreground: 210 40% 96%;
-  --secondary: 188 100% 38%;
-  --secondary-foreground: 210 40% 96%;
-  --muted: 220 13% 23%;
-  --muted-foreground: 220 9% 66%;
-  --accent: 39 100% 50%;
-  --accent-foreground: 215 28% 12%;
-  --destructive: 0 88% 63%;
-  --destructive-foreground: 215 28% 12%;
-  --border: 220 13% 23%;
-  --input: 220 13% 23%;
-  --ring: 199 100% 30%;
-  --chart-1: 199 100% 30%;
-  --chart-2: 188 100% 38%;
-  --chart-3: 39 100% 50%;
-  --chart-4: 220 9% 56%;
-  --chart-5: 199 89% 48%;
-  --sidebar: #1F2937;
-  --sidebar-foreground: #F9FAFB;
-  --sidebar-primary: #0D8AA6;
-  --sidebar-primary-foreground: #F9FAFB;
-  --sidebar-accent: #FFB703;
-  --sidebar-accent-foreground: #1F2937;
-  --sidebar-border: #374151;
-  --sidebar-ring: #0D8AA6;
+  /* Dark mode not supported - using light theme only */
 }
 
 @theme inline {
@@ -241,24 +181,12 @@
     background: linear-gradient(135deg, #193358 0%, #2a4a7c 100%);
   }
   
-  .dark .gradient-primary {
-    background: linear-gradient(135deg, #0f1f35 0%, #193358 100%);
-  }
-  
   .gradient-card {
     background: linear-gradient(135deg, rgba(25, 51, 88, 0.04) 0%, rgba(167, 131, 63, 0.06) 100%);
   }
   
-  .dark .gradient-card {
-    background: linear-gradient(135deg, rgba(42, 74, 124, 0.1) 0%, rgba(167, 131, 63, 0.08) 100%);
-  }
-  
   .gradient-card-hover {
     background: linear-gradient(135deg, rgba(25, 51, 88, 0.08) 0%, rgba(167, 131, 63, 0.12) 100%);
-  }
-  
-  .dark .gradient-card-hover {
-    background: linear-gradient(135deg, rgba(42, 74, 124, 0.15) 0%, rgba(167, 131, 63, 0.12) 100%);
   }
   
   .gradient-text {
@@ -268,46 +196,23 @@
     -webkit-text-fill-color: transparent;
   }
   
-  .dark .gradient-text {
-    background: linear-gradient(to right, #2a4a7c, #3d5fa0);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
   .bg-gradient-soft {
-    @apply bg-gradient-to-br from-blue-50 to-emerald-50;
-  }
-  
-  .dark .bg-gradient-soft {
-    @apply bg-gradient-to-br from-gray-800 to-gray-900;
+    @apply bg-linear-to-br from-blue-50 to-emerald-50;
   }
   
   .text-gray-dark {
     @apply text-gray-700;
   }
   
-  .dark .text-gray-dark {
-    @apply text-gray-300;
-  }
-  
   .text-gray-light {
     @apply text-gray-600;
-  }
-  
-  .dark .text-gray-light {
-    @apply text-gray-400;
   }
   
   .hover\:border-secondary:hover {
     @apply border-amber-500;
   }
   
-  .dark .hover\:border-secondary:hover {
-    @apply border-amber-400;
-  }
-  
   .hover\:border-primary:hover {
-    @apply border-blue-700 dark:border-blue-400;
+    @apply border-blue-700;
   }
 }

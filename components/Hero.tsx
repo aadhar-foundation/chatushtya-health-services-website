@@ -7,32 +7,32 @@ import { TAGLINE_1, TAGLINE_2, COMPANY_DESCRIPTION } from '@/lib/constants';
 
 const FloatingIcon = ({ icon: Icon, delay, duration, position }: any) => (
   <div
-    className={`absolute opacity-15 dark:opacity-25 pointer-events-none ${position}`}
+    className={`absolute opacity-15 pointer-events-none ${position}`}
     style={{
       animation: `float-slow ${duration}s ease-in-out infinite`,
       animationDelay: `${delay}s`,
     }}
   >
-    <Icon size={80} className="text-[#193358] dark:text-[#A7833F]" strokeWidth={1.5} />
+    <Icon size={80} className="text-[#193358]" strokeWidth={1.5} />
   </div>
 );
 
 const StatCard = ({ value, label, delay, icon: Icon }: any) => (
   <div
-    className="group relative p-6 bg-white/90 dark:bg-slate-800/50 backdrop-blur-lg border border-[#193358]/20 dark:border-[#A7833F]/20 rounded-2xl hover:bg-white dark:hover:bg-slate-800/70 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 cursor-pointer overflow-hidden shadow-md"
+    className="group relative p-6 bg-white/90 backdrop-blur-lg border border-[#193358]/20 rounded-2xl hover:bg-white transition-all duration-500 hover:shadow-lg hover:-translate-y-1 cursor-pointer overflow-hidden shadow-md"
     style={{
       animation: `slide-up 0.6s ease-out ${delay}ms`,
     }}
   >
-    <div className="absolute inset-0 bg-gradient-to-br from-[#193358]/5 to-[#A7833F]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     <div className="relative space-y-3">
       <div className="flex items-center justify-between">
-        <div className="text-3xl md:text-4xl font-bold text-[#193358] dark:text-white">
+        <div className="text-3xl md:text-4xl font-bold text-[#193358]">
           {value}
         </div>
         <Icon className="text-[#A7833F] opacity-60 group-hover:opacity-100 transition-opacity" size={24} />
       </div>
-      <p className="text-sm md:text-base text-slate-700 dark:text-slate-400 font-medium">{label}</p>
+      <p className="text-sm md:text-base text-slate-700 font-medium">{label}</p>
     </div>
   </div>
 );
@@ -65,13 +65,13 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="home"
-      className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-white dark:bg-background"
+      className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-white"
     >
       {/* Animated background gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary rounded-full mix-blend-multiply filter blur-3xl opacity-15 dark:opacity-20 animate-float" />
-        <div className="absolute -bottom-32 left-1/3 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-10 dark:opacity-15 animate-float-slow" />
-        <div className="absolute top-1/2 -left-48 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-8 dark:opacity-12 animate-float" style={{ animationDuration: '10s', animationDelay: '2s' }} />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-float" />
+        <div className="absolute -bottom-32 left-1/3 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float-slow" />
+        <div className="absolute top-1/2 -left-48 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-float" style={{ animationDuration: '10s', animationDelay: '2s' }} />
       </div>
 
       {/* Floating icons */}
@@ -81,30 +81,30 @@ export default function Hero() {
       <FloatingIcon icon={TrendingUp} delay={3} duration={11} position="bottom-20 right-1/4" />
 
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
+      <div className="relative z-20 max-w-[90%] mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Content */}
           <div className={`space-y-8 md:space-y-10 transition-all duration-1000 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#193358]/10 dark:bg-[#A7833F]/20 rounded-full border border-[#193358]/30 dark:border-[#A7833F]/40 w-fit">
-              <Zap size={16} className="text-[#193358] dark:text-[#A7833F]" />
-              <span className="text-sm font-semibold text-[#193358] dark:text-[#A7833F]">Transforming Healthcare</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#193358]/10 rounded-full border border-[#193358]/30 w-fit">
+              <Zap size={16} className="text-[#193358]" />
+              <span className="text-sm font-semibold text-[#193358]">Transforming Healthcare</span>
             </div>
 
             {/* Main Heading with gradient */}
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance text-[#193358] dark:text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance text-[#193358]">
                 {TAGLINE_1}
               </h1>
-              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#A7833F] dark:text-[#c9a96e]">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#A7833F]">
                 {TAGLINE_2}
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-lg md:text-xl text-slate-700 dark:text-slate-300 max-w-xl leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-700 max-w-xl leading-relaxed">
               {COMPANY_DESCRIPTION}
             </p>
 
@@ -122,7 +122,7 @@ export default function Hero() {
               </button>
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group px-8 py-4 border-2 border-[#193358] text-[#193358] dark:text-[#A7833F] dark:border-[#A7833F] font-semibold rounded-xl hover:bg-[#193358] hover:text-white dark:hover:bg-[#A7833F] hover:border-[#193358] dark:hover:border-[#A7833F] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95 text-base shadow-md"
+                className="group px-8 py-4 border-2 border-[#193358] text-[#193358] font-semibold rounded-xl hover:bg-[#193358] hover:text-white hover:border-[#193358] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95 text-base shadow-md"
               >
                 <span className="flex items-center justify-center gap-2">
                   Get in Touch
@@ -155,7 +155,7 @@ export default function Hero() {
       {/* Animated scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="flex flex-col items-center gap-2">
-          <span className="text-sm text-gray-dark dark:text-gray-light">Scroll to explore</span>
+          <span className="text-sm text-gray-dark">Scroll to explore</span>
           <ChevronDown size={24} className="text-[#193358] animate-pulse" />
         </div>
       </div>

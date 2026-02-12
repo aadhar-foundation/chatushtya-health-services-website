@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { GALLERY_ITEMS } from '@/lib/constants';
 
-const ITEMS_PER_PAGE = 2;
+const ITEMS_PER_PAGE = 3;
 
 export default function Gallery() {
   const [isVisible, setIsVisible] = useState(false);
@@ -99,21 +99,21 @@ export default function Gallery() {
     <section
       id="gallery"
       ref={ref}
-      className="w-full py-16 md:py-24 lg:py-32 bg-white dark:bg-background"
+      className="w-full py-16 md:py-24 lg:py-32 bg-white"
     >
-      <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[90%] mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
             Our Gallery
           </h2>
-          <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             Moments of training, learning, and professional development
           </p>
         </div>
 
         {/* Gallery Grid with 4 items per page */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {displayItems.map((item, index) => (
             <div
               key={item.id}
@@ -127,7 +127,7 @@ export default function Gallery() {
               }}
             >
               <div
-                className="group relative overflow-hidden rounded-lg cursor-pointer h-64 md:h-72 lg:h-80 gradient-card hover:gradient-card-hover transition-all duration-300 border border-primary/10 dark:border-primary/20 shadow-sm hover:shadow-md"
+                className="group relative overflow-hidden rounded-lg cursor-pointer h-64 md:h-72 lg:h-80 gradient-card hover:gradient-card-hover transition-all duration-300 border border-primary/10 shadow-sm hover:shadow-md"
                 onClick={() => {
                   setSelectedIndex(currentPage * ITEMS_PER_PAGE + index);
                   setLightboxOpen(true);
@@ -145,7 +145,7 @@ export default function Gallery() {
                 </div>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 {/* Text overlay */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 p-4">
@@ -155,9 +155,9 @@ export default function Gallery() {
                 </div>
 
                 {/* Zoom icon */}
-                <div className="absolute top-3 right-3 w-8 h-8 bg-white/90 dark:bg-primary/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <div className="absolute top-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <svg
-                    className="w-4 h-4 text-primary dark:text-white"
+                    className="w-4 h-4 text-primary"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -188,7 +188,7 @@ export default function Gallery() {
 
           {/* Page Info */}
           <div className="text-center min-w-fit">
-            <p className="text-sm md:text-base font-semibold text-primary dark:text-white">
+            <p className="text-sm md:text-base font-semibold text-primary">
               Page <span className="font-bold">{currentPage + 1}</span> of <span className="font-bold">{totalPages}</span>
             </p>
           </div>
@@ -212,7 +212,7 @@ export default function Gallery() {
               className={`px-3 md:px-4 py-1.5 md:py-2 rounded-md font-medium transition-all duration-300 text-sm md:text-base ${
                 currentPage === index
                   ? 'bg-primary text-white'
-                  : 'bg-gray-200 dark:bg-gray-700 text-primary dark:text-gray-200 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white'
+                  : 'bg-gray-200 text-primary hover:bg-primary hover:text-white'
               }`}
               aria-label={`Go to page ${index + 1}`}
               aria-current={currentPage === index ? 'page' : undefined}
@@ -225,12 +225,12 @@ export default function Gallery() {
 
       {/* Image Loading Overlay */}
       {loadingImage !== null && (
-        <div className="fixed inset-0 bg-black/50 dark:bg-black/70 flex items-center justify-center z-50 rounded-lg">
-          <div className="bg-white dark:bg-slate-800 p-8 md:p-12 rounded-2xl shadow-2xl text-center">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 rounded-lg">
+          <div className="bg-white p-8 md:p-12 rounded-2xl shadow-2xl text-center">
             <div className="mb-4">
-              <div className="inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 bg-[#193358]/10 dark:bg-[#A7833F]/10 rounded-full">
+              <div className="inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 bg-[#193358]/10 rounded-full">
                 <Image
-                  src="/images/chs-logo.jpg"
+                  src="/images/logo.png"
                   alt="CHS Logo"
                   width={60}
                   height={60}
@@ -238,7 +238,7 @@ export default function Gallery() {
                 />
               </div>
             </div>
-            <p className="text-slate-700 dark:text-slate-300 font-semibold">Loading image...</p>
+            <p className="text-slate-700 font-semibold">Loading image...</p>
           </div>
         </div>
       )}

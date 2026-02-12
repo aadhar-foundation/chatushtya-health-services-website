@@ -1,19 +1,8 @@
-// Theme Colors - Medical Blue, Secondary Blue, Gold, Gray/Slate, White
+// Theme Colors - Deep Navy Blue, Dark Gold, White
 export const THEME_COLORS = {
-  primary: '#005F74', // Primary Medical Blue - rgb(0, 95, 116)
-  primaryLight: '#0D8AA6',
-  primaryDark: '#004556',
-  secondary: '#008192', // Secondary Blue - rgb(0, 129, 162)
-  secondaryLight: '#00A3B8',
-  secondaryDark: '#006078',
-  accent: '#FFB703', // Golden
-  accentLight: '#FFD60A',
-  accentDark: '#FB8500',
-  dark: '#1F2937',
-  light: '#F8FAFC',
-  white: '#FFFFFF',
-  gray: '#64748B',
-  slate: '#94A3B8',
+  primary: '#193358', // Primary - Deep Navy Blue
+  secondary: '#A7833F', // Secondary - Dark Gold
+  background: '#FFFFFF', // Background - White
 };
 
 // Company Information
