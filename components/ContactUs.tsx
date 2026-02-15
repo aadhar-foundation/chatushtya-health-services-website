@@ -35,7 +35,7 @@ export default function ContactUs() {
   // Initialize EmailJS
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '');
+      emailjs.init(process.env.NEXT_PUBLIC_EMAILJSPUBKEY || '');
     }
   }, []);
 
@@ -87,7 +87,7 @@ export default function ContactUs() {
             process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
             process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
             templateParams,
-            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
+            process.env.NEXT_PUBLIC_EMAILJSPUBKEY || ''
           );
 
           setSubmitStatus('success');

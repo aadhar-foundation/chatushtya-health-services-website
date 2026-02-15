@@ -255,7 +255,7 @@ import emailjs from '@emailjs/browser';
 
 // Initialize EmailJS (add this in your layout.tsx or top-level component)
 if (!window.emailjs) {
-  emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+  emailjs.init(process.env.NEXT_PUBLIC_EMAILJSPUBKEY);
 }
 
 // In the onSubmit function:
@@ -272,7 +272,7 @@ try {
     process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
     process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
     templateParams,
-    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+    process.env.NEXT_PUBLIC_EMAILJSPUBKEY!
   );
   setSubmitStatus('success');
 } catch (error) {
