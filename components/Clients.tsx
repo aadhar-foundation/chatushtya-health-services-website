@@ -53,14 +53,16 @@ export default function Clients() {
       className="w-full py-16 md:py-24 lg:py-32 bg-gradient-soft"
     >
       <div className="max-w-[90%] mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
+        {/* Decorative accent line */}
+        <div className="h-1 w-44 bg-secondary rounded-full mx-auto mb-4" />
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <h2 className="h2 text-dark mb-4">
-            Our <span className="gradient-text">Clients</span>
-          </h2>
-          <p className="text-base md:text-lg text-gray-dark max-w-2xl mx-auto">
+         <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
+            Our Clients
+          </div>
+          <div className="text-base md:text-lg text-gray-dark max-w-2xl mx-auto">
             Trusted by leading healthcare institutions across India
-          </p>
+          </div>
         </div>
 
         {/* Clients Grid */}
@@ -68,11 +70,10 @@ export default function Clients() {
           {CLIENTS.map((client, index) => (
             <div
               key={index}
-              className={`transition-all duration-700 ${
-                isVisible
+              className={`transition-all duration-700 ${isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8'
-              }`}
+                }`}
               style={{
                 transitionDelay: isVisible ? `${index * 150}ms` : '0ms',
               }}
@@ -156,7 +157,7 @@ export default function Clients() {
               <div className="space-y-4 md:space-y-6">
                 {selectedClient.description.split('\n').map((paragraph, index) => {
                   if (!paragraph.trim()) return null;
-                  
+
                   if (paragraph.startsWith('•')) {
                     return (
                       <div key={index} className="flex gap-3 items-start">

@@ -209,10 +209,47 @@
   }
   
   .hover\:border-secondary:hover {
-    @apply border-amber-500;
+     @apply border-[#A7833F];
   }
   
   .hover\:border-primary:hover {
-    @apply border-blue-700;
+    @apply bg-[#193358];
+  }
+
+  /* Color utility classes - Primary and Secondary */
+  .bg-primary {
+    @apply bg-[#193358];
+  }
+  
+  .bg-secondary {
+    @apply bg-[#A7833F];
+  }
+  
+  .text-primary {
+    @apply text-[#193358];
+  }
+
+  .text-primary-hover {
+    @apply text-[#193358];
+  }
+
+  .text-primary-hover:hover {
+    @apply text-[#A7833F];
+  }
+  
+  .text-secondary {
+    @apply text-[#A7833F];
+  }
+
+  .text-secondary:hover {
+    @apply text-[#193358];
+  }
+  
+  .border-primary {
+    @apply border-[#193358];
+  }
+  
+  .border-secondary {
+    @apply border-[#A7833F];
   }
 }

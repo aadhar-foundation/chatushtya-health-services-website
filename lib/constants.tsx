@@ -4,7 +4,37 @@ export const THEME_COLORS = {
   secondary: '#A7833F', // Secondary - Dark Gold
   background: '#FFFFFF', // Background - White
 };
-
+// SEO & Metadata Configuration
+export const SEO_CONFIG = {
+  siteName: 'Chatushtya Health Services LLP',
+  siteUrl: 'https://chatushtya-health-services.com',
+  defaultKeywords: [
+    'healthcare training',
+    'capacity building',
+    'medical education',
+    'nursing training',
+    'healthcare consultancy',
+    'NCLEX preparation',
+    'NHS placements',
+    'clinical training',
+    'quality improvement',
+    'digital health transformation',
+    'ABDM implementation',
+    'healthcare professionals',
+    'medical education India',
+    'nursing staff development',
+    'paramedical training',
+    'hospital management training',
+    'healthcare excellence',
+    'professional development healthcare',
+  ],
+  description: 'CHS specializes in healthcare capacity building, clinical training, quality improvement, and digital health transformation. Empowering healthcare professionals and institutions worldwide.',
+  twitterHandle: '@CHS_Healthcare',
+  linkedInUrl: 'https://linkedin.com/company/chatushtya-health-services',
+  organizationType: 'HealthAndBeautyBusiness',
+  areaServed: ['IN'],
+  priceRange: '$$',
+};
 // Company Information
 export const COMPANY_NAME = 'Chatushtya Health Services LLP';
 export const COMPANY_SHORT_NAME = 'CHS';
@@ -14,15 +44,17 @@ export const COMPANY_DESCRIPTION =
   'At CHS Consultancy, we specialize in building capabilities and transforming processes to empower healthcare professionals and institutions worldwide. From medical education to employability across borders, we help create Centres of Excellence driven by professional pride.';
 
 export const COMPANY_COMMITMENT =
-  'Whether it\'s advancing technical expertise or building systems for continuous improvement, CHS is committed to empowering healthcare institutions and professionals. Together, we are shaping a healthier future for communities across India.';
+  'Our Commitment, whether it\'s advancing technical expertise or building systems for continuous improvement, CHS is committed to empowering healthcare institutions and professionals. Together, we are shaping a healthier future for communities across India.';
 
 export const ABOUT_DESCRIPTION =
-  'Chatushtya Health Services LLP (CHSLLP) is a forward-thinking healthcare capacity-building firm founded by leaders with deep expertise across clinical services, hospital management, retail operations, and large-scale health system strengthening. Our leadership team brings together decades of experience in transforming healthcare delivery and building professional excellence across India.';
+  'Chatushtya Health Services LLP (CHSLLP) is a forward-thinking healthcare capacity-building firm founded by leaders with deep expertise across clinical services, hospital management, retail operations, and large-scale health system strengthening. Our leadership team brings together decades of experience in transforming healthcare delivery and building professional excellence across India. \n\n CHSLLP specializes in enhancing the clinical and technical capabilities of healthcare professionals. Our services are designed to help hospitals achieve: \n\n 1. Improved clinical outcomes. \n\n 2. Higher patient satisfaction. \n\n 3. Streamlined operations through business process re‑engineering. \n\n We partner with healthcare institutions to strengthen systems, elevate service quality, and build sustainable, future‑ready clinical excellence.';
 
 // Navigation Links
 export const NAV_LINKS = [
   { label: 'Home', href: '#home', icon: 'home' },
   { label: 'About Us', href: '#about' },
+  { label: 'Our Leaders', href: '#about-leadership' },
+  { label: 'What We Do', href: '#about-leadership' },
   { label: 'Offerings', href: '#services' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Our Clients', href: '#clients' },
@@ -40,26 +72,31 @@ export const WHAT_WE_DO_ITEMS = [
   {
     title: 'Capacity Building',
     description: 'Supporting physicians, nursing officers, and paramedical staff across public and private sectors.',
+    seoKeywords: 'capacity building healthcare professionals training',
     icon: 'Heart',
   },
   {
     title: 'Expert Mentorship',
     description: 'With over 100 subject matter experts (SMEs) from India and abroad, we deliver onsite and online training with rapid turnaround.',
+    seoKeywords: 'expert mentorship healthcare training SME',
     icon: 'Users',
   },
   {
     title: 'Global Employability',
     description: 'Preparing nursing institutions and professionals for international opportunities such as NCLEX and NHS placements.',
+    seoKeywords: 'NCLEX preparation NHS placement international nursing',
     icon: 'Globe',
   },
   {
     title: 'Quality Improvement',
     description: 'Driving impactful projects that elevate healthcare standards and patient outcomes.',
+    seoKeywords: 'quality improvement healthcare patient outcomes',
     icon: 'TrendingUp',
   },
   {
     title: 'Certificate Programs',
     description: 'Offering specialized courses to enhance skills and career growth.',
+    seoKeywords: 'certificate programs healthcare training professional development',
     icon: 'Award',
   },
 ];
@@ -75,7 +112,7 @@ export const WHY_CHOOSE_US = [
   },
   {
     title: 'Proven Expertise',
-    description: 'Proven expertise in clinical and technical training.',
+    description: 'Proven expertise in the clinical and technical training.',
     icon: 'Star',
     stat: '50+',
     statLabel: 'Training Programs',
@@ -111,10 +148,10 @@ export const LEADERSHIP_TEAM = [
     image: '/images/leaders/sangit-gupta.jpg',
   },
   {
-    name: 'Mrs. Shilpa Gandhi',
+    name: 'Ms. Shilpa Gandhi',
     role: 'Independent Director',
-    description: 'Recognized for designing and implementing large-scale clinical capacity-building programs, curriculum development, and impact assessments.',
-    image: '/images/leaders/shilpa-gandhi.jpg',
+    description: 'An independent director recognized for designing and implementing large‑scale clinical capacity‑building programs, curriculum development, and impact assessments across public and private healthcare systems.',
+    image: '/images/shilpa_gandhi.jpeg',
   },
 ];
 
@@ -144,6 +181,7 @@ export const SERVICES = [
     id: 'clinical-training',
     title: 'Clinical & Professional Training',
     description: 'Comprehensive training programs for healthcare professionals',
+    seoDescription: 'Advanced clinical and professional training programs for physicians, nurses, and paramedical staff. Includes certification courses, employability training, and capacity building.',
     icon: 'Stethoscope',
     items: [
       'Advanced training programs for physicians and nursing officers',
@@ -158,6 +196,7 @@ export const SERVICES = [
     id: 'quality-accreditation',
     title: 'Quality & Accreditation',
     description: 'Elevate your healthcare standards with our quality improvement services',
+    seoDescription: 'Healthcare quality assessment and accreditation support including NABH and ISO certification, quality improvement projects, and digital health transformation.',
     icon: 'CheckCircle',
     items: [
       'Assistance with NABH and ISO certification processes',
@@ -172,6 +211,7 @@ export const SERVICES = [
     id: 'digital-health',
     title: 'Digital Health Transformation',
     description: 'Transform your healthcare delivery with modern digital solutions',
+    seoDescription: 'Digital health transformation services including ABDM implementation, EHR setup, healthcare IT infrastructure, and staff training for seamless digital adoption.',
     icon: 'Stethoscope',
     items: [
       'Technical partnership for Ayushmaan Bharat Digital Mission (ABDM)',
@@ -236,7 +276,7 @@ export const GALLERY_ITEMS = [
 
 // Contact Information
 // Individual contact constants
-export const COMPANY_ADDRESS = 'Room No: G-2, Aadhar Hospital & ICU Campus, CTS NO-343/B-117/6, Plot No 6, New Mondha, Bhokardan-Naaka, Jalna, Maharashtra, India, PIN: 431203';
+export const COMPANY_ADDRESS = 'Room No: G-2, Aadhar Hospital & ICU Campus, CTS NO-343/B-117/6, Plot No 6, New Mondha, Jalna, Maharashtra, India, PIN: 431203';
 export const COMPANY_EMAIL = 'contact@chs.com';
 export const COMPANY_PHONE = '+91-91124 01267';
 export const MAPS_URL = 'https://maps.app.goo.gl/6N5joGXgqZd6MijaA';
@@ -349,3 +389,64 @@ export type FooterLink = {
 // Export aliases for components that use different naming conventions
 export const SITE_SHORT_NAME = COMPANY_SHORT_NAME;
 export const SOCIAL_LINKS = SOCIAL_MEDIA;
+
+// JSON-LD Structured Data for Schema.org
+export const ORGANIZATION_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: COMPANY_NAME,
+  alternateName: COMPANY_SHORT_NAME,
+  url: SEO_CONFIG.siteUrl,
+  logo: `${SEO_CONFIG.siteUrl}/images/logo.png`,
+  description: SEO_CONFIG.description,
+  sameAs: [
+    SEO_CONFIG.linkedInUrl,
+    'https://facebook.com/chs-healthcare',
+    'https://instagram.com/chs_healthcare',
+    'https://youtube.com/@chs-healthcare',
+  ],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: COMPANY_ADDRESS.split(',')[0],
+    addressLocality: 'Jalna',
+    addressRegion: 'Maharashtra',
+    postalCode: '431203',
+    addressCountry: 'IN',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'Customer Service',
+    telephone: COMPANY_PHONE,
+    email: COMPANY_EMAIL,
+  },
+  foundingDate: '2010',
+  employees: '50-200',
+  knowsAbout: [
+    'Healthcare Training',
+    'Capacity Building',
+    'Medical Education',
+    'Nursing Training',
+    'Quality Improvement',
+    'Digital Health',
+    'Healthcare Consultancy',
+  ],
+};
+
+export const LOCAL_BUSINESS_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: COMPANY_NAME,
+  image: `${SEO_CONFIG.siteUrl}/images/logo.png`,
+  description: SEO_CONFIG.description,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Room No: G-2, Aadhar Hospital & ICU Campus',
+    addressLocality: 'Jalna',
+    addressRegion: 'Maharashtra',
+    postalCode: '431203',
+    addressCountry: 'IN',
+  },
+  telephone: COMPANY_PHONE,
+  email: COMPANY_EMAIL,
+  priceRange: SEO_CONFIG.priceRange,
+};

@@ -37,21 +37,20 @@ export default function Footer() {
   return (
     <>
       {/* Footer */}
-      <footer className="w-full bg-white text-slate-900 border-t border-slate-200">
-        <div className="mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
+      <footer className="w-full bg-white text-primary border-t border-slate-200">
+        <div className="mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 py-6 md:py-8 lg:py-10">
           {/* Main Footer Grid - Responsive: 1 col (mobile), 2 cols (tablet md), 4 cols (desktop lg) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 mb-12 md:mb-16">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-6 mb-12 md:mb-16">
             {/* Column 1 - Logo & Company Info */}
             <div className="flex flex-col">
               {/* Logo */}
-              <div className="flex items-center justify-start h-28">
-                <div className="relative h-24 w-16 p-0 overflow-hidden">
+              <div className="flex items-center justify-start h-24">
+                <div className="relative h-12 w-12 md:h-16 md:w-16 p-0 overflow-hidden">
                   <Image
                     src="/images/logo.png"
                     alt="CHS Logo"
-                    width={20}
-                    height={20}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="w-full h-full object-contain"
                     priority
                   />
                 </div>
@@ -95,7 +94,7 @@ export default function Footer() {
             </div>
 
             {/* Column 2 - Services */}
-            <div className="space-y-3">
+            <div className="space-y-3 mt-4">
               <h4 className="font-semibold text-black text-sm">Services</h4>
               <ul className="space-y-2 text-xs md:text-sm text-slate-600">
                 <li><a href="#services" className="hover:text-primary transition-colors">Clinical Training</a></li>
@@ -105,10 +104,10 @@ export default function Footer() {
             </div>
 
             {/* Column 3 - Company */}
-            <div className="space-y-3">
+            <div className="space-y-3 mt-4">
               <h4 className="font-semibold text-black text-sm">Company</h4>
               <ul className="space-y-2 text-xs md:text-sm text-slate-600">
-                <li><a href="#about" className="hover:text-primary transition-colors">About Us</a></li>
+                <li><a href="#services" className="hover:text-primary transition-colors">Offerings & Services</a></li>
                 <li><a href="#gallery" className="hover:text-primary transition-colors">Gallery</a></li>
                 <li><a href="#clients" className="hover:text-primary transition-colors">Our Clients</a></li>
                 <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
@@ -116,13 +115,14 @@ export default function Footer() {
             </div>
 
             {/* Column 4 - Resources */}
-            <div className="space-y-3">
-              <h4 className="font-semibold text-black text-sm">Resources</h4>
+            <div className="space-y-3 mt-4">
+              <h4 className="font-semibold text-black text-sm">About</h4>
               <ul className="space-y-2 text-xs md:text-sm text-slate-600">
-                <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Case Studies</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Terms</a></li>
+                <li><a href="#about" className="hover:text-primary transition-colors">About Us</a></li>
+                <li><a href="#about-leadership" className="hover:text-primary transition-colors">Our Leadership Team</a></li>
+                <li><a href="#about-leadership" className="hover:text-primary transition-colors">What We Do</a></li>
+                <li><a href="#about-leadership" className="hover:text-primary transition-colors">Why Choose Us</a></li>
+                <li><a href="#about-leadership" className="hover:text-primary transition-colors">Our Core Values</a></li>
               </ul>
             </div>
           </div>

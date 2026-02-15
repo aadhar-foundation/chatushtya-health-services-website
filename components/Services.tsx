@@ -40,16 +40,15 @@ export default function Services() {
     >
       <div className="max-w-[90%] mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
         {/* Decorative accent line */}
-        <div className="h-1 w-20 bg-[#A7833F] rounded-full mx-auto mb-8" />
-
+        <div className="h-1 w-44 bg-secondary rounded-full mx-auto mb-4" />
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-20 lg:mb-24">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#193358] mb-4">
+        <div className="text-center mb-16 md:mb-20">
+          <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
             Offerings & Services
-          </h2>
-          <p className="text-base md:text-lg text-slate-700 max-w-2xl mx-auto">
+          </div>
+          <div className="text-base md:text-lg text-slate-700 max-w-2xl mx-auto">
             Comprehensive healthcare solutions designed for your institution's success
-          </p>
+          </div>
         </div>
 
         {/* Services Grid */}
@@ -61,11 +60,10 @@ export default function Services() {
             return (
               <div
                 key={service.id}
-                className={`transition-all duration-700 ${
-                  isVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-8'
-                }`}
+                className={`transition-all duration-700 ${isVisible
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-8'
+                  }`}
                 style={{
                   transitionDelay: isVisible ? `${index * 200}ms` : '0ms',
                 }}
@@ -73,11 +71,11 @@ export default function Services() {
                 {/* Service Card */}
                 <div className="relative group">
                   {/* Background gradient */}
-                  <div className="absolute inset-0 bg-linear-to-br from-[#193358]/5 via-[#A7833F]/5 to-[#193358]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-secondary/5 to-primary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   {/* Card content */}
                   <div
-                    className="relative gradient-card border border-[#193358]/10 rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-lg hover:border-[#A7833F] shadow-sm"
+                    className="relative gradient-card border border-primary/10 rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-lg hover:border-secondary shadow-sm"
                     onClick={() => setExpandedIndex(isExpanded ? -1 : index)}
                   >
                     {/* Header section */}
@@ -85,14 +83,14 @@ export default function Services() {
                       <div className="flex items-start gap-4">
                         {/* Icon */}
                         <div className="shrink-0">
-                          <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[#193358]/10 group-hover:bg-[#A7833F]/20 transition-all duration-300">
-                            <Icon className="w-8 h-8 text-[#193358]" />
+                          <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 group-hover:bg-secondary/20 transition-all duration-300">
+                            <Icon className="w-8 h-8 text-primary" />
                           </div>
                         </div>
 
                         {/* Title section */}
                         <div className="flex-1">
-                          <h3 className="text-lg md:text-xl font-bold text-[#193358] mb-2">
+                          <h3 className="text-lg md:text-xl font-bold text-primary mb-2">
                             {service.title}
                           </h3>
                           <p className="text-sm md:text-base text-slate-700">
@@ -104,9 +102,8 @@ export default function Services() {
                         <div className="shrink-0">
                           <ChevronDown
                             size={24}
-                            className={`text-[#193358] transition-transform duration-300 ${
-                              isExpanded ? 'rotate-180' : ''
-                            }`}
+                            className={`text-primary transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''
+                              }`}
                           />
                         </div>
                       </div>
@@ -114,11 +111,10 @@ export default function Services() {
 
                     {/* Expandable content */}
                     <div
-                      className={`overflow-hidden transition-all duration-300 ${
-                        isExpanded ? 'max-h-96' : 'max-h-0'
-                      }`}
+                      className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-96' : 'max-h-0'
+                        }`}
                     >
-                      <div className="px-6 md:px-8 pb-6 md:pb-8 border-t border-[#193358]/10 pt-6">
+                      <div className="px-6 md:px-8 pb-6 md:pb-8 border-t border-primary/10 pt-6">
                         <ul className="space-y-3">
                           {service.items.map((item, itemIndex) => (
                             <li
@@ -128,7 +124,7 @@ export default function Services() {
                                 animationDelay: `${itemIndex * 50}ms`,
                               }}
                             >
-                              <span className="shrink-0 w-2 h-2 rounded-full bg-[#A7833F] mt-2" />
+                              <span className="shrink-0 w-2 h-2 rounded-full bg-secondary mt-2" />
                               <span className="text-sm md:text-base text-slate-700 leading-relaxed">
                                 {item}
                               </span>
@@ -137,7 +133,7 @@ export default function Services() {
                         </ul>
 
                         {/* CTA Button in expanded view */}
-                        <button className="mt-6 w-full px-4 py-2 bg-[#193358] hover:bg-[#A7833F] text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 shadow-md">
+                        <button className="mt-6 w-full px-4 py-2 bg-primary hover:bg-secondary text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 shadow-md">
                           Learn More
                         </button>
                       </div>
@@ -159,7 +155,7 @@ export default function Services() {
           </p>
           <a
             href="#contact"
-            className="group relative px-8 py-4 bg-[#193358] text-white font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-95 text-base shadow-lg"
+            className="group relative px-8 py-4 bg-primary text-white font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-95 text-base shadow-lg"
           >
             Get a Consultation
           </a>

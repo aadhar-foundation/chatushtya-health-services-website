@@ -74,12 +74,12 @@ export default function Gallery() {
   };
 
   const handleNext = () => {
-    setSelectedIndex((prev) => (prev + 1) % displayItems.length);
+    setSelectedIndex((prev) => (prev + 1) % GALLERY_ITEMS.length);
   };
 
   const handlePrevious = () => {
     setSelectedIndex((prev) =>
-      prev === 0 ? displayItems.length - 1 : prev - 1
+      prev === 0 ? GALLERY_ITEMS.length - 1 : prev - 1
     );
   };
 
@@ -102,14 +102,16 @@ export default function Gallery() {
       className="w-full py-16 md:py-24 lg:py-32 bg-white"
     >
       <div className="max-w-[90%] mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
+        {/* Decorative accent line */}
+        <div className="h-1 w-44 bg-secondary rounded-full mx-auto mb-4" />
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
-            Our Gallery
-          </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
+            Gallery
+          </div>
+          <div className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             Moments of training, learning, and professional development
-          </p>
+          </div>
         </div>
 
         {/* Gallery Grid with 4 items per page */}
@@ -228,7 +230,7 @@ export default function Gallery() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 rounded-lg">
           <div className="bg-white p-8 md:p-12 rounded-2xl shadow-2xl text-center">
             <div className="mb-4">
-              <div className="inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 bg-[#193358]/10 rounded-full">
+              <div className="inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 bg-primary/10 rounded-full">
                 <Image
                   src="/images/logo.png"
                   alt="CHS Logo"
@@ -259,8 +261,8 @@ export default function Gallery() {
           <div className="relative w-full max-w-4xl h-auto max-h-[80vh] flex items-center justify-center animate-slide-up">
             <div className="relative w-full h-full flex items-center justify-center">
               <Image
-                src={displayItems[selectedIndex].image || "/placeholder.svg"}
-                alt={displayItems[selectedIndex].alt}
+                src={GALLERY_ITEMS[selectedIndex].image || "/placeholder.svg"}
+                alt={GALLERY_ITEMS[selectedIndex].alt}
                 width={1200}
                 height={800}
                 className="object-contain max-w-full max-h-[80vh]"
@@ -272,10 +274,10 @@ export default function Gallery() {
           {/* Image Description */}
           <div className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-8 text-white">
             <p className="text-lg md:text-xl font-semibold mb-2">
-              {displayItems[selectedIndex].description}
+              {GALLERY_ITEMS[selectedIndex].description}
             </p>
             <p className="text-sm md:text-base opacity-75">
-              Image {selectedIndex + 1} of {displayItems.length}
+              Image {selectedIndex + 1} of {GALLERY_ITEMS.length}
             </p>
           </div>
 
